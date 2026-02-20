@@ -1,4 +1,4 @@
-# capgo-capacitor-trojan
+# cursor-capacitor-plugin
 
 Capgo Cursor plugin focused on production-grade Capacitor and Capgo practices.
 

@@ -11,8 +11,8 @@
   },
   "plugins": [
     {
-      "name": "capgo-capacitor-trojan",
-      "source": "./capgo-capacitor-trojan",
+      "name": "cursor-capacitor-plugin",
+      "source": "./cursor-capacitor-plugin",
       "description": "Capgo + Capacitor best-practice guardrails, release checks, and review workflows"
     }
   ]
