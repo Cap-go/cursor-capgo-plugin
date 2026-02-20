@@ -1,0 +1,14 @@
+---
+description: Enforce safe Capgo live-update patterns and prevent native/web release confusion
+alwaysApply: true
+---
+
+capgo-live-update-guardrails:
+
+- Treat Capgo as web-layer OTA only: Swift, Kotlin, Java, manifest, entitlement, and plist changes still require store release.
+- Always call `CapacitorUpdater.notifyAppReady()` during app startup after critical initialization succeeds.
+- Require a rollback-first rollout strategy: `staging` or `beta` channel first, then `production` after validation.
+- For breaking web migrations, gate rollout by app version/channel and document rollback steps before upload.
+- Explicitly state whether updates are `autoUpdate` or manual, and why that mode is chosen.
+- Require monitoring signals after rollout (startup failures, crash spikes, update failure events).
+- Do not recommend immediate forced reload for sensitive flows (checkout, auth, onboarding) without UX fallback.

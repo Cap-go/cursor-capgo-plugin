@@ -1,0 +1,26 @@
+{
+  "name": "capgo-capacitor-trojan",
+  "displayName": "Capgo Trojan for Capacitor",
+  "version": "0.1.0",
+  "description": "A Cursor plugin that injects Capgo and Capacitor best practices into daily coding, reviews, and release workflows.",
+  "author": {
+    "name": "Capgo",
+    "email": "team@capgo.app"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "capacitor",
+    "capgo",
+    "mobile",
+    "best-practices",
+    "security",
+    "live-updates"
+  ],
+  "logo": "assets/logo.svg",
+  "rules": "rules",
+  "skills": "skills",
+  "agents": "agents",
+  "commands": "commands",
+  "hooks": "hooks/hooks.json"
+}

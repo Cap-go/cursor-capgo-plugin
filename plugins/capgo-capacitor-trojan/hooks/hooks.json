@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "./scripts/enforce-bun.sh",
+        "matcher": "npm|npx"
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "./scripts/capgo-session-audit.sh"
+      }
+    ]
+  }
+}

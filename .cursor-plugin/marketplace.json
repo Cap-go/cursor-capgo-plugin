@@ -1,0 +1,19 @@
+{
+  "name": "capgo-cursor-plugins",
+  "owner": {
+    "name": "Capgo",
+    "email": "team@capgo.app"
+  },
+  "metadata": {
+    "description": "Capgo-maintained Cursor plugin marketplace for Capacitor engineering guardrails",
+    "version": "0.1.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "capgo-capacitor-trojan",
+      "source": "./capgo-capacitor-trojan",
+      "description": "Capgo + Capacitor best-practice guardrails, release checks, and review workflows"
+    }
+  ]
+}
