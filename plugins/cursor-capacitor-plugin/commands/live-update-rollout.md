@@ -17,7 +17,7 @@ Create a rollout runbook for the next live-update bundle.
 ## Plan Requirements
 
 1. `Preflight`
-- `capgo doctor`
+- `npx @capgo/cli@latest doctor`
 - local compatibility script
 - channel compatibility + release-type checks
 

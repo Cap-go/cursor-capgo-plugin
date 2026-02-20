@@ -6,8 +6,8 @@ alwaysApply: true
 compatibility-gates:
 
 - Run local compatibility check script before publishing to shared channels.
-- Run `capgo bundle compatibility <appId> --channel <targetChannel>` before upload and before promotion.
-- Run `capgo bundle releaseType <appId> --channel <targetChannel>` and block OTA if output is `native`.
+- Run `npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>` before upload and before promotion.
+- Run `npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>` and block OTA if output is `native`.
 - Verify Capacitor package major alignment and updater plugin presence before rollout.
 - Confirm `CapacitorUpdater` config exists and startup readiness notification is implemented.
 - If compatibility fails, output exact blockers and required remediation, not generic guidance.

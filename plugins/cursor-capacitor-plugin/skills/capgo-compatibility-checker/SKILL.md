@@ -18,8 +18,8 @@ Use this skill when validating whether a bundle is safe to ship to a target chan
 - `notifyAppReady()` call path present on startup
 
 3. Channel compatibility
-- `capgo bundle compatibility` pass against target channel
-- `capgo bundle releaseType` returns OTA when expected
+- `npx @capgo/cli@latest bundle compatibility` pass against target channel
+- `npx @capgo/cli@latest bundle releaseType` returns OTA when expected
 
 4. Rollout compatibility
 - Previous stable bundle available for rollback
@@ -29,10 +29,10 @@ Use this skill when validating whether a bundle is safe to ship to a target chan
 
 ```bash
 ./scripts/check-capacitor-compatibility.sh --strict
-capgo bundle compatibility <appId> --channel <targetChannel>
-capgo bundle releaseType <appId> --channel <targetChannel>
-capgo channel currentBundle <targetChannel> <appId>
-capgo bundle list <appId>
+npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>
+npx @capgo/cli@latest channel currentBundle <targetChannel> <appId>
+npx @capgo/cli@latest bundle list <appId>
 ```
 
 ## Decision Matrix

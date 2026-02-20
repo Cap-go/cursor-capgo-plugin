@@ -38,12 +38,12 @@ Use this skill when planning implementation that may ship as live updates.
 ## Command Patterns To Reference
 
 ```bash
-capgo doctor
-capgo bundle compatibility <appId> --channel <channel>
-capgo bundle releaseType <appId> --channel <channel>
-capgo channel currentBundle <channel> <appId>
-capgo bundle upload <appId> --channel <channel>
-capgo channel set <channel> <appId> --bundle <bundleVersion>
+npx @capgo/cli@latest doctor
+npx @capgo/cli@latest bundle compatibility <appId> --channel <channel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <channel>
+npx @capgo/cli@latest channel currentBundle <channel> <appId>
+npx @capgo/cli@latest bundle upload <appId> --channel <channel>
+npx @capgo/cli@latest channel set <channel> <appId> --bundle <bundleVersion>
 ```
 
 ## Common Failure Modes

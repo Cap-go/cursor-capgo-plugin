@@ -20,10 +20,10 @@ Use this skill when creating or reviewing CI pipelines that publish live updates
 ## Required Gate Commands
 
 ```bash
-capgo doctor
+npx @capgo/cli@latest doctor
 ./scripts/check-capacitor-compatibility.sh --strict
-capgo bundle compatibility <appId> --channel <targetChannel>
-capgo bundle releaseType <appId> --channel <targetChannel>
+npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>
 ```
 
 ## Production Promotion Requirements

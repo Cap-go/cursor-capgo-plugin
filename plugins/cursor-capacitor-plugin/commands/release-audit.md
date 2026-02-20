@@ -13,10 +13,10 @@ Audit the current repository for live-update release readiness.
 2. Run local script checks:
    - `./scripts/check-capacitor-compatibility.sh --strict`
 3. Collect Capgo CLI evidence (or list missing evidence):
-   - `capgo doctor`
-   - `capgo bundle compatibility <appId> --channel <targetChannel>`
-   - `capgo bundle releaseType <appId> --channel <targetChannel>`
-   - `capgo channel currentBundle <targetChannel> <appId>`
+   - `npx @capgo/cli@latest doctor`
+   - `npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>`
+   - `npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>`
+   - `npx @capgo/cli@latest channel currentBundle <targetChannel> <appId>`
 4. Validate tests/security evidence for impacted areas.
 5. Validate rollback command and known-good target bundle.
 

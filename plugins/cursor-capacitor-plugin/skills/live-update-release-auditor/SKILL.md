@@ -21,11 +21,11 @@ Use this skill before publishing to beta/production channels.
 ## Required Command Evidence
 
 ```bash
-capgo doctor
-capgo bundle compatibility <appId> --channel <targetChannel>
-capgo bundle releaseType <appId> --channel <targetChannel>
-capgo channel currentBundle <targetChannel> <appId>
-capgo bundle list <appId>
+npx @capgo/cli@latest doctor
+npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>
+npx @capgo/cli@latest channel currentBundle <targetChannel> <appId>
+npx @capgo/cli@latest bundle list <appId>
 ```
 
 ## Output Format

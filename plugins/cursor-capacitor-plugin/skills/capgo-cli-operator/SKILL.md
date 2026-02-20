@@ -19,78 +19,78 @@ Use this skill whenever the user asks how to operate Capgo from the CLI.
 ### Core bootstrap
 
 ```bash
-capgo login
-capgo init
-capgo doctor
+npx @capgo/cli@latest login
+npx @capgo/cli@latest init
+npx @capgo/cli@latest doctor
 ```
 
 ### Bundle operations
 
 ```bash
-capgo bundle zip <appId> --path <webBuildPath>
-capgo bundle upload <appId> --path <webBuildPath> --channel <channel>
-capgo bundle compatibility <appId> --channel <channel>
-capgo bundle releaseType <appId> --channel <channel>
-capgo bundle list <appId>
-capgo bundle cleanup <appId> --keep <count>
-capgo bundle delete <bundleVersion> <appId>
-capgo bundle encrypt <zipFile> <checksum>
-capgo bundle decrypt <encryptedZipFile> <checksum>
+npx @capgo/cli@latest bundle zip <appId> --path <webBuildPath>
+npx @capgo/cli@latest bundle upload <appId> --path <webBuildPath> --channel <channel>
+npx @capgo/cli@latest bundle compatibility <appId> --channel <channel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <channel>
+npx @capgo/cli@latest bundle list <appId>
+npx @capgo/cli@latest bundle cleanup <appId> --keep <count>
+npx @capgo/cli@latest bundle delete <bundleVersion> <appId>
+npx @capgo/cli@latest bundle encrypt <zipFile> <checksum>
+npx @capgo/cli@latest bundle decrypt <encryptedZipFile> <checksum>
 ```
 
 ### App management
 
 ```bash
-capgo app add <appId>
-capgo app list
-capgo app set <appId> --name <name>
-capgo app setting plugins.CapacitorUpdater.defaultChannel --string "production"
-capgo app debug <appId>
-capgo app delete <appId>
+npx @capgo/cli@latest app add <appId>
+npx @capgo/cli@latest app list
+npx @capgo/cli@latest app set <appId> --name <name>
+npx @capgo/cli@latest app setting plugins.CapacitorUpdater.defaultChannel --string "production"
+npx @capgo/cli@latest app debug <appId>
+npx @capgo/cli@latest app delete <appId>
 ```
 
 ### Channel management
 
 ```bash
-capgo channel add <channel> <appId>
-capgo channel list <appId>
-capgo channel currentBundle <channel> <appId>
-capgo channel set <channel> <appId> --bundle <bundleVersion>
-capgo channel set <channel> <appId> --disable-auto-update patch
-capgo channel delete <channel> <appId>
+npx @capgo/cli@latest channel add <channel> <appId>
+npx @capgo/cli@latest channel list <appId>
+npx @capgo/cli@latest channel currentBundle <channel> <appId>
+npx @capgo/cli@latest channel set <channel> <appId> --bundle <bundleVersion>
+npx @capgo/cli@latest channel set <channel> <appId> --disable-auto-update patch
+npx @capgo/cli@latest channel delete <channel> <appId>
 ```
 
 ### Key and encryption management
 
 ```bash
-capgo key create
-capgo key save
-capgo key delete_old
+npx @capgo/cli@latest key create
+npx @capgo/cli@latest key save
+npx @capgo/cli@latest key delete_old
 ```
 
 ### Account and organization management
 
 ```bash
-capgo account id
-capgo organization list
-capgo organization add --name <orgName> --email <adminEmail>
-capgo organization members <orgId>
-capgo organization set <orgId> --enforce-2fa
-capgo organization delete <orgId>
+npx @capgo/cli@latest account id
+npx @capgo/cli@latest organization list
+npx @capgo/cli@latest organization add --name <orgName> --email <adminEmail>
+npx @capgo/cli@latest organization members <orgId>
+npx @capgo/cli@latest organization set <orgId> --enforce-2fa
+npx @capgo/cli@latest organization delete <orgId>
 ```
 
 ### Cloud build and credentials
 
 ```bash
-capgo build credentials
-capgo build request <appId> --platform ios --path .
-capgo build request <appId> --platform android --path .
+npx @capgo/cli@latest build credentials
+npx @capgo/cli@latest build request <appId> --platform ios --path .
+npx @capgo/cli@latest build request <appId> --platform android --path .
 ```
 
 ### MCP server
 
 ```bash
-capgo mcp
+npx @capgo/cli@latest mcp
 ```
 
 ## Standard Runbooks

@@ -16,11 +16,11 @@ Create a safe baseline channel topology for live updates.
 ## Command Plan
 
 ```bash
-capgo channel add staging <appId>
-capgo channel add beta <appId>
-capgo channel add production <appId> --default
-capgo channel list <appId>
-capgo channel set staging <appId> --self-assign
+npx @capgo/cli@latest channel add staging <appId>
+npx @capgo/cli@latest channel add beta <appId>
+npx @capgo/cli@latest channel add production <appId> --default
+npx @capgo/cli@latest channel list <appId>
+npx @capgo/cli@latest channel set staging <appId> --self-assign
 ```
 
 ## Configuration Guidance

@@ -17,11 +17,11 @@ Generate immediate rollback actions for a failing live update.
 ## Runbook Requirements
 
 1. Confirm current bundle:
-   - `capgo channel currentBundle <channel> <appId>`
+   - `npx @capgo/cli@latest channel currentBundle <channel> <appId>`
 2. List available bundles:
-   - `capgo bundle list <appId>`
+   - `npx @capgo/cli@latest bundle list <appId>`
 3. Roll back channel:
-   - `capgo channel set <channel> <appId> --bundle <knownGoodBundle>`
+   - `npx @capgo/cli@latest channel set <channel> <appId> --bundle <knownGoodBundle>`
 4. Validate post-rollback behavior and monitoring checks.
 5. Define fix-forward path through staged channels.
 

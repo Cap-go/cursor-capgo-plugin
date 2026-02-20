@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "capgo": {
-      "command": "capgo",
-      "args": ["mcp"]
+      "command": "npx",
+      "args": ["@capgo/cli@latest", "mcp"]
     }
   }
 }

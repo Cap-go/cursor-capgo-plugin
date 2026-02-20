@@ -17,10 +17,10 @@ Use this skill when a live update causes regressions, startup failures, or eleva
 ## Immediate Command Toolkit
 
 ```bash
-capgo channel currentBundle <channel> <appId>
-capgo bundle list <appId>
-capgo channel set <channel> <appId> --bundle <knownGoodBundle>
-capgo app debug <appId>
+npx @capgo/cli@latest channel currentBundle <channel> <appId>
+npx @capgo/cli@latest bundle list <appId>
+npx @capgo/cli@latest channel set <channel> <appId> --bundle <knownGoodBundle>
+npx @capgo/cli@latest app debug <appId>
 ```
 
 ## Containment Patterns

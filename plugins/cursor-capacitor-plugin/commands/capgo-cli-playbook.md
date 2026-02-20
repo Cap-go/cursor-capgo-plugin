@@ -17,14 +17,14 @@ Produce an executable Capgo CLI runbook for this project.
 ## Minimum Command Set
 
 ```bash
-capgo login
-capgo init
-capgo doctor
-capgo app add <appId>
-capgo channel add <channel> <appId>
-capgo bundle upload <appId> --channel <channel>
-capgo bundle compatibility <appId> --channel <channel>
-capgo bundle releaseType <appId> --channel <channel>
-capgo channel set <channel> <appId> --bundle <bundleVersion>
-capgo channel currentBundle <channel> <appId>
+npx @capgo/cli@latest login
+npx @capgo/cli@latest init
+npx @capgo/cli@latest doctor
+npx @capgo/cli@latest app add <appId>
+npx @capgo/cli@latest channel add <channel> <appId>
+npx @capgo/cli@latest bundle upload <appId> --channel <channel>
+npx @capgo/cli@latest bundle compatibility <appId> --channel <channel>
+npx @capgo/cli@latest bundle releaseType <appId> --channel <channel>
+npx @capgo/cli@latest channel set <channel> <appId> --bundle <bundleVersion>
+npx @capgo/cli@latest channel currentBundle <channel> <appId>
 ```

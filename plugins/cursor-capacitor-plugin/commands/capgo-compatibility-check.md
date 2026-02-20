@@ -12,11 +12,11 @@ Run and summarize compatibility checks for target channel promotion.
 1. Run local checker:
    - `./scripts/check-capacitor-compatibility.sh --strict`
 2. Run channel compatibility:
-   - `capgo bundle compatibility <appId> --channel <targetChannel>`
+   - `npx @capgo/cli@latest bundle compatibility <appId> --channel <targetChannel>`
 3. Run release type gate:
-   - `capgo bundle releaseType <appId> --channel <targetChannel>`
+   - `npx @capgo/cli@latest bundle releaseType <appId> --channel <targetChannel>`
 4. Capture current channel bundle:
-   - `capgo channel currentBundle <targetChannel> <appId>`
+   - `npx @capgo/cli@latest channel currentBundle <targetChannel> <appId>`
 
 ## Required Output
 
