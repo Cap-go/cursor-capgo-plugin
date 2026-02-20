@@ -5,11 +5,11 @@ alwaysApply: true
 
 capacitor-core-practices:
 
-- Use `bun` and `bunx` for package management and CLI execution; do not recommend `npm` or `npx`.
+- Follow the project's existing package manager and script conventions.
 - Keep `@capacitor/core`, `@capacitor/cli`, `@capacitor/android`, and `@capacitor/ios` on aligned versions.
-- After installing, removing, or upgrading any native plugin, run `bunx cap sync` before testing.
+- After installing, removing, or upgrading any native plugin, run `cap sync` before testing.
 - Prefer `capacitor.config.ts` over `capacitor.config.json` so configuration can be environment-aware.
 - Never leave development-only server URLs or `cleartext: true` enabled in production configuration.
 - Check plugin availability and platform capability before calling native APIs.
 - Keep JavaScript logic and native changes clearly separated in explanations and pull requests.
-- When proposing commands, include verification steps (`bun run lint`, `bun run test`, `bun run verify`) appropriate to the project.
+- When proposing commands, include project-native verification steps (lint, tests, build, and release checks).

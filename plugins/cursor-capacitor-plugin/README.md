@@ -1,68 +1,67 @@
 # Cursor Capacitor Plugin
 
-A Cursor plugin by Capgo that makes AI assistance align with production-grade Capacitor and Capgo practices.
+A Cursor plugin that applies production-grade Capacitor and live-update practices during coding, review, and release planning.
 
 ## What This Plugin Does
 
-It injects consistent rules and workflows into Cursor so feature work, reviews, and release prep follow mobile-safe standards by default.
+It injects guidance and workflows so generated solutions are aligned with real mobile release constraints, not just web assumptions.
 
 ## Primary Use Cases
 
-- Building new Capacitor features with fewer platform mistakes
-- Reviewing changes before PR merge or release
-- Preparing Capgo OTA rollouts with rollback-first planning
-- Auditing security/testing readiness for mobile releases
+- building new Capacitor features with fewer platform mistakes
+- reviewing changes before merge or release
+- preparing live-update rollouts with rollback-first plans
+- auditing security and testing readiness for mobile releases
 
 ## What Is Enforced
 
 ### 1) Core Capacitor Practices
 
-- Use `bun` / `bunx` (not `npm` / `npx`)
-- Keep Capacitor package versions aligned
-- Run `bunx cap sync` after native plugin changes
-- Prefer `capacitor.config.ts` with production-safe values
-- Check plugin/platform availability before native calls
+- keep Capacitor package versions aligned
+- run platform sync after native dependency changes
+- prefer environment-aware `capacitor.config.ts`
+- check plugin/platform availability before native calls
+- separate web and native impact in implementation notes
 
-### 2) Capgo Live Update Guardrails
+### 2) Live Update Guardrails
 
-- Treat Capgo as web-layer OTA only
-- Keep native changes on store-release path
-- Require staged channel rollout (`staging`/`beta` then `production`)
-- Require explicit rollback and monitoring strategy
-- Call `CapacitorUpdater.notifyAppReady()` after startup succeeds
+- treat live updates as web-layer OTA only
+- route native changes through store release workflow
+- use staged channel rollout before production
+- define rollback criteria before rollout
+- require post-release monitoring signals
 
 ### 3) Security and Testing Standards
 
-- Avoid sensitive data in plain storage or logs
-- Use secure network defaults for production
-- Include security scan in release candidates (`bunx capsec scan --ci`)
-- Require test coverage at the right layer (unit/integration/E2E)
+- avoid sensitive data in plain storage and logs
+- use secure network defaults in production
+- include security scanning in release checks
+- require test coverage at the right layer (unit/integration/E2E)
 
 ## Plugin Components
 
 - `rules/`
   - `capacitor-core-practices.mdc`
-  - `capgo-live-update-guardrails.mdc`
+  - `live-update-guardrails.mdc`
   - `capacitor-security-and-testing.mdc`
 - `skills/`
-  - `capgo-capacitor-architect`
-  - `capgo-release-auditor`
+  - `capacitor-live-update-architect`
+  - `live-update-release-auditor`
 - `agents/`
-  - `capgo-reviewer`
+  - `capacitor-reviewer`
 - `commands/`
-  - `capgo-audit`
-  - `capgo-live-update-rollout`
+  - `release-audit`
+  - `live-update-rollout`
 - `hooks/`
-  - blocks shell usage of `npm`/`npx`
   - emits end-of-session release checklist reminders
 
 ## Example Prompts In Cursor
 
-- `Use capgo-capacitor-architect to design this feature for iOS + Android with rollout notes.`
-- `Run capgo-audit on this repo and list blockers before release.`
-- `Build a capgo-live-update-rollout plan for this patch release.`
-- `Review this PR as capgo-reviewer and prioritize high-severity risks.`
+- `Use capacitor-live-update-architect to design this feature for iOS + Android with rollout notes.`
+- `Run release-audit on this repo and list blockers before release.`
+- `Build a live-update-rollout plan for this patch release.`
+- `Review this PR as capacitor-reviewer and prioritize high-severity risks.`
 
 ## Scope Limit
 
-This plugin improves implementation and review quality in Cursor. It does not replace actual CI, device testing, store submission, or production monitoring.
+This plugin improves implementation and review quality in Cursor. It does not replace CI, device testing, store submission, or production monitoring.

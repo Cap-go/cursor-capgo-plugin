@@ -1,11 +1,11 @@
 ---
-name: capgo-capacitor-architect
-description: Plan and implement Capacitor features with Capgo-ready architecture, native safety, and release discipline.
+name: capacitor-live-update-architect
+description: Plan and implement Capacitor features with live-update-ready architecture, native safety, and release discipline.
 ---
 
-# Capgo Capacitor Architect
+# Capacitor Live Update Architect
 
-Use this skill when building or refactoring Capacitor apps that may ship with Capgo live updates.
+Use this skill when building or refactoring Capacitor apps that ship web-layer updates.
 
 ## Workflow
 
@@ -13,22 +13,20 @@ Use this skill when building or refactoring Capacitor apps that may ship with Ca
 2. Validate platform constraints (iOS, Android, web) before picking plugin APIs.
 3. Define configuration updates in `capacitor.config.ts` with production-safe defaults.
 4. Implement feature logic with plugin availability checks and explicit fallbacks.
-5. If Capgo is used, define channel strategy (`staging`, `beta`, `production`) and rollback path.
+5. If live updates are used, define channel strategy (`staging`, `beta`, `production`) and rollback path.
 6. Add tests proportionate to risk (unit, integration, E2E/smoke).
-7. Run validation commands with bun tooling.
+7. Run the project's validation command set.
 8. Summarize risks, assumptions, and release notes.
 
-## Command Baseline
+## Suggested Validation Baseline
 
-```bash
-bun install
-bun run lint
-bun run test
-bun run build
-bunx cap sync
-```
+- install dependencies
+- run lint
+- run tests
+- run build
+- run `cap sync` after native dependency changes
 
-## Capgo-Specific Guardrails
+## Live-Update Guardrails
 
 - Call `CapacitorUpdater.notifyAppReady()` after app bootstrap.
 - Separate native release notes from web update notes.

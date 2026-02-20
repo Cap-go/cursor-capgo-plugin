@@ -1,11 +1,11 @@
 {
-  "name": "capgo-cursor-plugins",
+  "name": "capacitor-cursor-plugins",
   "owner": {
     "name": "Capgo",
     "email": "team@capgo.app"
   },
   "metadata": {
-    "description": "Capgo-maintained Cursor plugin marketplace for Capacitor engineering guardrails",
+    "description": "Cursor plugin marketplace for Capacitor engineering guardrails and live update release safety",
     "version": "0.1.0",
     "pluginRoot": "plugins"
   },
@@ -13,7 +13,7 @@
     {
       "name": "cursor-capacitor-plugin",
       "source": "./cursor-capacitor-plugin",
-      "description": "Capgo + Capacitor best-practice guardrails, release checks, and review workflows"
+      "description": "Capacitor architecture, testing, security, and live update rollout guardrails"
     }
   ]
 }

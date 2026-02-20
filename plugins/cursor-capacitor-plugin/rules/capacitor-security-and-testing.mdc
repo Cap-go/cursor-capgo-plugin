@@ -1,5 +1,5 @@
 ---
-description: Require security checks and multi-level testing for Capacitor and Capgo changes
+description: Require security checks and multi-level testing for Capacitor and live-update changes
 alwaysApply: true
 ---
 
@@ -7,7 +7,7 @@ capacitor-security-and-testing:
 
 - Never store secrets, auth tokens, or credentials in plain `Preferences`, `localStorage`, or logs.
 - Require HTTPS-first networking and secure production defaults (`cleartext: false`, restricted allow-lists).
-- Run `bunx capsec scan --ci` for release candidates and treat high/critical findings as blockers.
+- Run security scans for release candidates and treat high/critical findings as blockers.
 - Ensure WebView debugging and verbose native logging are disabled for release builds.
 - Add or update tests at the right layer: unit tests for logic, integration tests for plugin bridges, E2E/smoke tests for flows.
-- For Capgo updates, validate startup health and rollback behavior on at least one iOS and one Android build.
+- For live updates, validate startup health and rollback behavior on at least one iOS and one Android build.

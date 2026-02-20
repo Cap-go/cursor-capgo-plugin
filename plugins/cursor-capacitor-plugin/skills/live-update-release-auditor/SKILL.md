@@ -1,20 +1,20 @@
 ---
-name: capgo-release-auditor
-description: Audit Capacitor + Capgo release readiness with security, test, and rollout checks.
+name: live-update-release-auditor
+description: Audit Capacitor live-update release readiness with security, testing, and rollout checks.
 ---
 
-# Capgo Release Auditor
+# Live Update Release Auditor
 
-Use this skill before publishing app binaries or pushing Capgo live updates.
+Use this skill before publishing app binaries or pushing live updates.
 
 ## Audit Checklist
 
 1. Confirm Capacitor package versions are aligned and lockfile is updated.
-2. Confirm `bunx cap sync` was run after native dependency changes.
+2. Confirm platform sync was run after native dependency changes.
 3. Confirm production config does not enable cleartext traffic or debug WebView settings.
-4. Confirm security scan status (`bunx capsec scan --ci`) and unresolved findings.
+4. Confirm security scan status and unresolved findings.
 5. Confirm tests passed at relevant levels for touched areas.
-6. Confirm Capgo update strategy:
+6. Confirm live-update strategy:
    - target channel
    - staged rollout path
    - rollback bundle availability

@@ -1,11 +1,11 @@
 ---
-name: capgo-live-update-rollout
-description: Build a safe Capgo rollout plan with staged channels, monitoring, and rollback criteria.
+name: live-update-rollout
+description: Build a safe live-update rollout plan with staged channels, monitoring, and rollback criteria.
 ---
 
-# Capgo Live Update Rollout
+# Live Update Rollout
 
-Create a rollout plan for a new Capgo bundle.
+Create a rollout plan for a new live-update bundle.
 
 ## Required Output
 

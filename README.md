@@ -1,45 +1,37 @@
-# Capgo Cursor Plugin Pack
+# Cursor Capacitor Plugin Pack
 
-This repository contains Cursor marketplace plugins maintained by Capgo for teams building and shipping Capacitor apps.
+This repository contains a Cursor plugin focused on safer Capacitor development and live update release workflows.
 
-## What This Is
+## What It Is
 
-`cursor-capacitor-plugin` is a Cursor plugin that adds opinionated guardrails for:
-- Capacitor engineering best practices
-- Capgo live update safety
-- Mobile release readiness
-- Security and testing discipline
-
-The goal is simple: make Cursor consistently push safer implementation and release decisions for Capacitor projects.
+`cursor-capacitor-plugin` is a policy and workflow layer for Cursor that nudges implementation and review toward production-safe mobile practices.
 
 ## Why It Is Useful
 
-Without explicit guardrails, AI-assisted coding often misses mobile-specific risks. This plugin reduces that by enforcing:
-- correct package manager usage (`bun` / `bunx`)
-- correct native sync flow (`bunx cap sync` after native plugin changes)
-- OTA vs native release boundaries (Capgo updates are web-layer only)
-- safer config defaults (no production cleartext/debug leftovers)
-- explicit rollout and rollback planning
+AI-generated code often misses mobile-specific constraints. This plugin reduces common failures by enforcing:
+- clear web-vs-native release boundaries
+- safer live update rollout and rollback planning
+- stronger security/testing expectations
+- structured review outputs for risky changes
 
-## What It Changes In Practice
+## What It Adds To Cursor
 
-When active in Cursor, the plugin provides:
-- Always-on rules that shape coding and review output
-- Skills for implementation planning and pre-release audits
-- A reviewer agent focused on Capacitor + Capgo regressions
-- Commands for structured audit and rollout planning
-- Hooks that block `npm` / `npx` usage in shell commands
+- always-on rules for architecture, live updates, security, and testing
+- reusable skills for feature implementation and release readiness audits
+- a reviewer agent that prioritizes regressions and release risk
+- commands for audit and rollout planning
+- session-end checklist hooks
 
 ## Repository Layout
 
 - `.cursor-plugin/marketplace.json`: marketplace-level manifest
-- `plugins/cursor-capacitor-plugin/`: the actual plugin package
+- `plugins/cursor-capacitor-plugin/`: plugin package
 - `scripts/validate-template.mjs`: structure and frontmatter validator
 
 ## Local Validation
 
 ```bash
-bun scripts/validate-template.mjs
+node scripts/validate-template.mjs
 ```
 
 ## Publishing Flow
@@ -48,5 +40,5 @@ bun scripts/validate-template.mjs
    - `.cursor-plugin/marketplace.json`
    - `plugins/cursor-capacitor-plugin/.cursor-plugin/plugin.json`
 2. Validate the repository:
-   - `bun scripts/validate-template.mjs`
+   - `node scripts/validate-template.mjs`
 3. Push the public GitHub repository and submit it to Cursor Marketplace.
