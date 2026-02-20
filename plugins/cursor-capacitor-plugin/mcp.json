@@ -1,3 +1,8 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "capgo": {
+      "command": "capgo",
+      "args": ["mcp"]
+    }
+  }
 }

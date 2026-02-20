@@ -1,17 +1,44 @@
 ---
 name: live-update-rollout
-description: Build a safe live-update rollout plan with staged channels, monitoring, and rollback criteria.
+description: Build a staged rollout plan for Capgo updates with compatibility checkpoints and rollback triggers.
 ---
 
 # Live Update Rollout
 
-Create a rollout plan for a new live-update bundle.
+Create a rollout runbook for the next live-update bundle.
 
-## Required Output
+## Required Inputs
 
-1. `Scope`: files and features included in the bundle.
-2. `Compatibility`: minimum native app version and platform caveats.
-3. `Channel Plan`: staged progression (for example: `staging -> beta -> production`).
-4. `Validation Gates`: what must be green before promotion.
-5. `Rollback Plan`: fallback bundle, trigger thresholds, and owner.
-6. `Post-Deploy Monitoring`: metrics/logs to watch for 24h.
+- `appId`
+- `bundleVersion`
+- `targetFeatureScope`
+- `targetChannels`
+
+## Plan Requirements
+
+1. `Preflight`
+- `capgo doctor`
+- local compatibility script
+- channel compatibility + release-type checks
+
+2. `Staged publication`
+- Upload to `staging`
+- Promote to `beta`
+- Promote to `production`
+
+3. `Gate criteria`
+- startup success threshold
+- crash delta threshold
+- update failure threshold
+
+4. `Rollback`
+- previous bundle ID
+- exact rollback command
+- incident owner and SLA
+
+## Output Format
+
+- `Command sequence`
+- `Gate checks`
+- `Monitoring plan`
+- `Rollback plan`

@@ -2,6 +2,9 @@
   "hooks": {
     "sessionEnd": [
       {
+        "command": "./scripts/check-capacitor-compatibility.sh"
+      },
+      {
         "command": "./scripts/session-audit.sh"
       }
     ]

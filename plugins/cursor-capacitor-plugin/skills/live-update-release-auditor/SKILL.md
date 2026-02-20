@@ -1,29 +1,44 @@
 ---
 name: live-update-release-auditor
-description: Audit Capacitor live-update release readiness with security, testing, and rollout checks.
+description: Audit release readiness for Capacitor live updates with strict compatibility, security, and rollback gates.
 ---
 
 # Live Update Release Auditor
 
-Use this skill before publishing app binaries or pushing live updates.
+Use this skill before publishing to beta/production channels.
 
-## Audit Checklist
+## Mandatory Audit Checks
 
-1. Confirm Capacitor package versions are aligned and lockfile is updated.
-2. Confirm platform sync was run after native dependency changes.
-3. Confirm production config does not enable cleartext traffic or debug WebView settings.
-4. Confirm security scan status and unresolved findings.
-5. Confirm tests passed at relevant levels for touched areas.
-6. Confirm live-update strategy:
-   - target channel
-   - staged rollout path
-   - rollback bundle availability
-   - monitoring plan after deployment
-7. Confirm native-only changes are scheduled for store release, not OTA.
+1. Capacitor core package major versions are aligned.
+2. Updater plugin is present and configured.
+3. Startup readiness signaling is implemented.
+4. Compatibility gate command passes for target channel.
+5. Release type gate confirms OTA eligibility.
+6. Security scan and test suite pass for touched areas.
+7. Rollback bundle and trigger thresholds are defined.
+8. Monitoring owner and timeline are explicit.
+
+## Required Command Evidence
+
+```bash
+capgo doctor
+capgo bundle compatibility <appId> --channel <targetChannel>
+capgo bundle releaseType <appId> --channel <targetChannel>
+capgo channel currentBundle <targetChannel> <appId>
+capgo bundle list <appId>
+```
 
 ## Output Format
 
 - `Status`: pass | pass-with-risk | fail
-- `Blockers`: concrete list with severity and owner
-- `Release Notes`: what changed in web vs native
-- `Rollback`: exact rollback action and trigger condition
+- `Critical blockers`: must-fix before release
+- `Medium risks`: can ship with mitigation
+- `Rollback plan`: exact command sequence
+- `Promotion decision`: proceed | hold
+
+## Severity Rules
+
+- Missing compatibility gate result -> `fail`
+- Native-impacting changes marked OTA -> `fail`
+- No rollback bundle identified -> `pass-with-risk`
+- Missing platform test evidence -> `pass-with-risk`

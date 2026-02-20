@@ -1,13 +1,16 @@
 ---
-description: Require security checks and multi-level testing for Capacitor and live-update changes
+description: Require security and testing depth proportional to Capacitor and OTA release risk
 alwaysApply: true
 ---
 
 capacitor-security-and-testing:
 
-- Never store secrets, auth tokens, or credentials in plain `Preferences`, `localStorage`, or logs.
-- Require HTTPS-first networking and secure production defaults (`cleartext: false`, restricted allow-lists).
-- Run security scans for release candidates and treat high/critical findings as blockers.
-- Ensure WebView debugging and verbose native logging are disabled for release builds.
-- Add or update tests at the right layer: unit tests for logic, integration tests for plugin bridges, E2E/smoke tests for flows.
-- For live updates, validate startup health and rollback behavior on at least one iOS and one Android build.
+- Never store credentials, auth tokens, or secrets in plain storage or logs.
+- Enforce HTTPS-first networking and production-safe transport configuration.
+- Disable WebView debugging and verbose native logs in release builds.
+- Run security scanning for release candidates and block on high/critical findings.
+- Match tests to risk: unit for logic, integration for bridge behavior, E2E for user flows.
+- Validate rollback behavior on both iOS and Android before production promotion.
+- Require at least one cold-start verification per platform after update publication.
+- For auth/onboarding/payment updates, include explicit regression tests.
+- Verify source maps and monitoring are wired before broad rollout.

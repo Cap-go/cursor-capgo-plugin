@@ -1,15 +1,19 @@
 ---
-description: Enforce baseline Capacitor engineering practices across architecture, native sync, and tooling
+description: Enforce production-grade Capacitor implementation patterns across architecture, native sync, and release hygiene
 alwaysApply: true
 ---
 
 capacitor-core-practices:
 
-- Follow the project's existing package manager and script conventions.
-- Keep `@capacitor/core`, `@capacitor/cli`, `@capacitor/android`, and `@capacitor/ios` on aligned versions.
-- After installing, removing, or upgrading any native plugin, run `cap sync` before testing.
-- Prefer `capacitor.config.ts` over `capacitor.config.json` so configuration can be environment-aware.
-- Never leave development-only server URLs or `cleartext: true` enabled in production configuration.
-- Check plugin availability and platform capability before calling native APIs.
-- Keep JavaScript logic and native changes clearly separated in explanations and pull requests.
-- When proposing commands, include project-native verification steps (lint, tests, build, and release checks).
+- Keep `@capacitor/core`, `@capacitor/cli`, `@capacitor/android`, and `@capacitor/ios` on aligned majors.
+- After installing, removing, or upgrading native plugins, always run platform sync before testing.
+- Prefer `capacitor.config.ts` for environment-aware config and release-safe defaults.
+- Never leave development server URLs or cleartext transport enabled for production builds.
+- Check plugin availability and platform capability before invoking native APIs.
+- Separate web-layer and native-layer impact in every implementation summary.
+- Document whether each change is OTA-eligible or requires app-store release.
+- Avoid heavy app startup work on the main thread; keep boot path stable for update health checks.
+- Use explicit fallback paths for unavailable permissions/devices/plugins.
+- Require deterministic release notes: changed files, migration steps, rollback target.
+- Treat changes to config, entitlements, manifests, and native code as store-release scope.
+- Include project-native verification commands (lint, tests, build, sync, release checks).

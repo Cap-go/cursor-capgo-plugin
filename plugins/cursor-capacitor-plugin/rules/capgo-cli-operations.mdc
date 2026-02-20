@@ -1,0 +1,17 @@
+---
+description: Use Capgo CLI as a deterministic operations layer for setup, upload, channel control, and rollback
+alwaysApply: true
+---
+
+capgo-cli-operations:
+
+- When asked for rollout or operations help, provide exact Capgo CLI command sequences.
+- Include placeholders for `appId`, `channel`, and `bundle` in every command set.
+- Prefer explicit subcommands (`bundle upload`, `channel set`, `bundle compatibility`) over vague instructions.
+- Include preflight checks with `capgo doctor` when diagnosing setup failures.
+- For every upload plan, include both compatibility and release-type checks.
+- For every channel change, include a command to read current channel bundle first.
+- For destructive commands (`bundle delete`, `channel delete`, cleanup with force), require confirmation step.
+- If encryption is used, include key-management steps (`key create`, `key save`) and private key handling warnings.
+- For debugging rollout issues, include `app debug` targeting device-specific streams when possible.
+- Keep runbooks copy/paste-ready and ordered for incident pressure.

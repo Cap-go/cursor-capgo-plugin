@@ -1,8 +1,8 @@
 {
   "name": "cursor-capacitor-plugin",
   "displayName": "Cursor Capacitor Plugin",
-  "version": "0.1.0",
-  "description": "A Cursor plugin that applies Capacitor and live-update best practices to coding, review, and release workflows.",
+  "version": "0.2.0",
+  "description": "A Cursor plugin with deep Capacitor + Capgo CLI workflows for live update delivery, compatibility checks, and incident response.",
   "author": {
     "name": "Capgo",
     "email": "team@capgo.app"
@@ -11,10 +11,12 @@
   "keywords": [
     "cursor",
     "capacitor",
+    "capgo",
     "mobile",
-    "best-practices",
-    "security",
-    "live-updates"
+    "live-updates",
+    "ota",
+    "compatibility",
+    "release"
   ],
   "logo": "assets/logo.svg",
   "rules": "rules",

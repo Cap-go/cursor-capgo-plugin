@@ -1,14 +1,18 @@
 ---
-description: Enforce safe live-update patterns and prevent native/web release confusion
+description: Enforce safe live-update behavior with channel discipline, compatibility gating, and rollback readiness
 alwaysApply: true
 ---
 
 live-update-guardrails:
 
-- Treat live updates as web-layer OTA only: Swift, Kotlin, Java, manifest, entitlement, and plist changes still require store release.
-- Always call `CapacitorUpdater.notifyAppReady()` during app startup after critical initialization succeeds.
-- Require a rollback-first rollout strategy: `staging` or `beta` channel first, then `production` after validation.
-- For breaking web migrations, gate rollout by app version/channel and document rollback steps before upload.
-- Explicitly state whether updates are `autoUpdate` or manual, and why that mode is chosen.
-- Require monitoring signals after rollout (startup failures, crash spikes, update failure events).
-- Do not recommend immediate forced reload for sensitive flows (checkout, auth, onboarding) without UX fallback.
+- Treat live updates as web-layer OTA only; native changes still require store release.
+- Always ensure app startup calls `CapacitorUpdater.notifyAppReady()` after critical initialization.
+- Use staged rollout progression (for example: `staging -> beta -> production`).
+- Before promotion, run compatibility checks against target channel metadata.
+- Determine release type before OTA shipment; if release type is native, stop OTA flow.
+- Capture current channel bundle before changing any channel assignment.
+- Require rollback target bundle to be identified before production rollout.
+- For risky updates, define explicit blast-radius limits (channel filters and platform targeting).
+- Avoid immediate forced reload during sensitive flows without a user-safe fallback.
+- Validate post-rollout telemetry: startup success, update failures, crash deltas.
+- For metadata-sensitive changes, set minimum update version strategy explicitly.

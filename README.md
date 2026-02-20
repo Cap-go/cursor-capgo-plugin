@@ -1,44 +1,47 @@
 # Cursor Capacitor Plugin Pack
 
-This repository contains a Cursor plugin focused on safer Capacitor development and live update release workflows.
+This repository contains a production-focused Cursor plugin for Capacitor teams shipping live updates.
 
-## What It Is
+## Included Plugin
 
-`cursor-capacitor-plugin` is a policy and workflow layer for Cursor that nudges implementation and review toward production-safe mobile practices.
+- `cursor-capacitor-plugin`
 
-## Why It Is Useful
+## What It Contains
 
-AI-generated code often misses mobile-specific constraints. This plugin reduces common failures by enforcing:
-- clear web-vs-native release boundaries
-- safer live update rollout and rollback planning
-- stronger security/testing expectations
-- structured review outputs for risky changes
+- high-signal engineering rules for Capacitor and OTA boundaries
+- deep Capgo CLI skills and command playbooks
+- compatibility and release-type gate workflows
+- rollback and incident-response runbooks
+- session hooks and local compatibility scripts
 
-## What It Adds To Cursor
+## Key Capability Areas
 
-- always-on rules for architecture, live updates, security, and testing
-- reusable skills for feature implementation and release readiness audits
-- a reviewer agent that prioritizes regressions and release risk
-- commands for audit and rollout planning
-- session-end checklist hooks
+1. Architecture safety
+- OTA vs native boundary enforcement
+- startup readiness and rollout planning
 
-## Repository Layout
+2. Operations
+- app/channel/bundle lifecycle with Capgo CLI
+- compatibility gates before promotion
 
-- `.cursor-plugin/marketplace.json`: marketplace-level manifest
-- `plugins/cursor-capacitor-plugin/`: plugin package
-- `scripts/validate-template.mjs`: structure and frontmatter validator
+3. Release control
+- pre-release audits
+- production rollback command patterns
 
-## Local Validation
+4. System checks
+- local compatibility script for package/config/startup checks
+- end-of-session audit reminders
+
+## Validate Plugin Structure
 
 ```bash
-node scripts/validate-template.mjs
+bun scripts/validate-template.mjs
 ```
 
-## Publishing Flow
+## Publish Workflow
 
-1. Keep metadata updated in:
+1. Keep manifests updated:
    - `.cursor-plugin/marketplace.json`
    - `plugins/cursor-capacitor-plugin/.cursor-plugin/plugin.json`
-2. Validate the repository:
-   - `node scripts/validate-template.mjs`
-3. Push the public GitHub repository and submit it to Cursor Marketplace.
+2. Validate structure.
+3. Push public repo and submit to Cursor Marketplace.
