@@ -1,22 +1,26 @@
 {
-  "name": "cursor-capacitor-plugin",
-  "displayName": "Cursor Capacitor Plugin",
-  "version": "0.2.0",
-  "description": "A Cursor plugin with deep Capacitor + Capgo CLI workflows for live update delivery, compatibility checks, and incident response.",
+  "name": "capgo",
+  "displayName": "Capgo",
+  "version": "0.3.0",
+  "description": "Ship and update Capacitor apps from Cursor: hosted Capgo MCP (OAuth) for live updates, channels, rollouts, devices, native builds and stats, plus Capgo CLI workflows, compatibility checks and rollback runbooks.",
   "author": {
     "name": "Capgo",
     "email": "team@capgo.app"
   },
   "license": "MIT",
   "keywords": [
-    "cursor",
+    "app-store",
     "capacitor",
     "capgo",
-    "mobile",
-    "live-updates",
-    "ota",
     "compatibility",
-    "release"
+    "cursor",
+    "live-updates",
+    "mcp",
+    "mobile",
+    "native-builds",
+    "ota",
+    "release",
+    "rollback"
   ],
   "logo": "assets/logo.svg",
   "rules": "rules",
@@ -24,5 +28,7 @@
   "agents": "agents",
   "commands": "commands",
   "hooks": "hooks/hooks.json",
-  "mcpServers": "mcp.json"
+  "mcpServers": "mcp.json",
+  "homepage": "https://capgo.app/docs/ai/mcp/",
+  "repository": "https://github.com/Cap-go/cursor-capgo-plugin"
 }

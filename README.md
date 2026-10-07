@@ -1,10 +1,15 @@
-# Cursor Capacitor Plugin Pack
+# Capgo for Cursor
 
-This repository contains a production-focused Cursor plugin for Capacitor teams shipping live updates.
+Ship, live-update, and roll back Capacitor apps from Cursor.
+
+## MCP servers
+
+- `capgo`: hosted MCP at `https://api.capgo.app/mcp`. Nothing to install. Cursor shows **Needs login**; click it and sign in to Capgo (OAuth). Manages apps, bundles, channels, rollouts, devices, stats, native builds, webhooks, and push notifications. Docs: https://capgo.app/docs/ai/mcp/
+- `capgo-cli`: local Capgo CLI MCP (`npx @capgo/cli@latest mcp`). Needed to upload a bundle from your build folder, request a native build, or run `doctor`.
 
 ## Included Plugin
 
-- `cursor-capacitor-plugin`
+- `capgo` (folder `plugins/cursor-capacitor-plugin`)
 
 ## What It Contains
 
