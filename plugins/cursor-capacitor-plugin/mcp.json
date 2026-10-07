@@ -1,8 +1,14 @@
 {
   "mcpServers": {
     "capgo": {
+      "url": "https://api.capgo.app/mcp"
+    },
+    "capgo-cli": {
       "command": "npx",
-      "args": ["@capgo/cli@latest", "mcp"]
+      "args": [
+        "@capgo/cli@latest",
+        "mcp"
+      ]
     }
   }
 }
